@@ -2105,7 +2105,7 @@ export class SurveyCreatorModel extends Base
    * - `"saved"` - Changes are successfully saved.
    * @see onModified
    */
-  public get state(): string {
+  public get state(): "" as const | "modified" | "saving" | "saved" {
     return !!this._stateValue ? this._stateValue : "";
   }
   protected setState(value: string) {
